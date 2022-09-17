@@ -6,14 +6,14 @@
         <div class="col-md-8">
             <img src="https://picsum.photos/1300/500?{{$models->category->nama}}" alt="" class="img-fluid mb-4">
             <h2 class="mb-3">{{$models->title}}</h2>
-        <p>By . Rian <a href="">{{$models->author->name}}</a> 
-         Category <a href="/categories/{{$models->category->slug}}">{{$models->category->nama}}</a></p>
-        {!!$models->body!!}
-        <br><br>
-    <a href="/blog">>>Kembali Ke Halaman Sebelumnya<<</a>
-</div>
+            <p>By . Rian <a href="">{{$models->author->name}}</a>
+                Category <a href="/blog?category={{$models->category->slug}}">{{$models->category->nama}}</a></p>
+            {!!$models->body!!}
+            <br><br>
+            <a href="/blog">>>Kembali Ke Halaman Sebelumnya<<< /a>
         </div>
     </div>
+</div>
 @endsection
 
 <!-- <html>   
@@ -31,4 +31,3 @@ Post::create([
     width:50%;
 }
 </style> -->
-
