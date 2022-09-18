@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,15 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', [PostController::class, 'home']);
 Route::get('/about', [PostController::class, 'about']);
 Route::get('/blog', [PostController::class, 'blog']);
-
 // routs untuk single blog di halaman blog
 Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
 //routs untuk category
 Route::get('categories', [CategoryController::class, 'data_category']);
+Route::get('/login', [LoginController::class, 'login']);
+
+
+
+
 // routs untuk view categories
 // Route::get('/categories/{category:slug}', [CategoryController::class, 'categori']);
 //Short By Blog From Publisher (username/nama)
