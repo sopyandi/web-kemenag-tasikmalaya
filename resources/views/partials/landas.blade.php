@@ -1,6 +1,6 @@
-<br><br>
-<nav class="bg-dark p-2 text-dark bg-opacity-10" style=" margin-left:-3%;">
-  <div class="container-fluid">
+<div class="left">
+<nav class="bg-success p-2 text-dark">
+  <div class="navbar navbar-expand-lg navbar-dark bg-success">
     <a class="navbar-brand" href="#" >
       <img src="img/ii.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
     </a>
@@ -10,4 +10,10 @@
         </li>
     </ul>
   </div>
+  </div>
 </nav>
+<style>
+  .left{
+    margin-left:-3%;
+  }
+</style>
