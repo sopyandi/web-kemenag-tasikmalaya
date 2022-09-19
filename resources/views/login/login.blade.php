@@ -1,9 +1,11 @@
 @extends('layouts/main')
 @section('container')
 <div class="row justify-content-center">
-    <div class="col-md-4 mt-5">
+    <div class="col-md-4 mt-3">
         <main class="form-signin w-100 m-auto">
-            <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <center>
+                <img class="mb-4" src="img/logo.png" alt="" width="250" height="110">
+                </center>
             <h1 class="h3 mb-3 fw-normal">Silahkan Login</h1>
             <form>
                 <div class="form-floating">
