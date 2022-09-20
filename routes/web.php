@@ -22,11 +22,15 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [PostController::class, 'home']);
 Route::get('/about', [PostController::class, 'about']);
 Route::get('/blog', [PostController::class, 'blog']);
-// routs untuk single blog di halaman blog
+//routs untuk single blog di halaman blog
 Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
 //routs untuk category
 Route::get('categories', [CategoryController::class, 'data_category']);
+//login
 Route::get('/login', [LoginController::class, 'login']);
+//register
+Route::get('/register', [LoginController::class, 'register']);
+
 
 
 

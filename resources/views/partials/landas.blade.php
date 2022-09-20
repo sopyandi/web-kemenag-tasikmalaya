@@ -1,19 +1,13 @@
-<div class="left">
-<nav class="bg-success p-2 text-dark">
-  <div class="navbar navbar-expand-lg navbar-dark bg-success">
-    <a class="navbar-brand" href="#" >
-      <img src="img/ii.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-    </a>
-    <ul class="nav-item">
-        <li>
-            
-        </li>
-    </ul>
-  </div>
-  </div>
-</nav>
-<style>
-  .left{
-    margin-left:-3%;
-  }
-</style>
+       
+    <div class="container">
+      <div class="background">
+       <div class="col-md-5 caraousel mt-10">
+        .
+       </div>
+      </div>
+    </div>
+  <style>
+    body{
+      background-color:#198754;;
+    }
+  </style>

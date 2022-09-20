@@ -1,7 +1,7 @@
 @extends('layouts/main')
-
 @section('container')
 <!-- <h1>{{$judul}}</h1> -->
+<br><br>
 <div class="row justify-content-center">
   <div class="col-md-6 mb-4">
     <form action="/blog">

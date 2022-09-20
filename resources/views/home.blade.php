@@ -3,6 +3,7 @@
     <!-- Slider -->
     @include('partials/crausel')
     <!-- tutup slide -->
-    @include('partials/landas')
-
+@endsection
+@section('landas')
+@include('partials/landas')
 @endsection
