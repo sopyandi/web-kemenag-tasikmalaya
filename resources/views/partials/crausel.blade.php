@@ -61,11 +61,12 @@
         </button>
         </div> -->
 
-        <style>
-            .carousel{
-                margin-left:-2%;
-            }
-            #img{
-            width:100px;
-            }
-        </style>
+<style>
+  .carousel {
+    margin-left: -2%;
+  }
+
+  #img {
+    width: 100px;
+  }
+</style>
