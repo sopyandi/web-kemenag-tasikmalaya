@@ -13,4 +13,10 @@ class LoginController extends Controller
             'title' => 'Login'
         ]);
     }
+    public function register()
+    {
+        return view('login/register', [
+            'title'=>'Login'
+        ]);
+    }
 }
