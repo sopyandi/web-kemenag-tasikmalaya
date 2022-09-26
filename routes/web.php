@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,9 @@ Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
 //routs untuk category
 Route::get('categories', [CategoryController::class, 'data_category']);
 //login
-Route::get('/login', [RegisterController::class, 'login']);
+Route::get('/login', [RegisterController::class, 'login'])->middleware('guest');
+Route::post('/login', [RegisterController::class, 'data_login']);
+Route::get('/dashboard', [DashboardController::class, 'dashboard']);
 //register
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'data_register']);
