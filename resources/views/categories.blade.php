@@ -1,6 +1,7 @@
 @extends('layouts/main')
 
 @section('container')
+ <br><br><br>
 <div class="container">
     <div class="row">
         @foreach($category as $data)
