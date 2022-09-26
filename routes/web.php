@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +27,10 @@ Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
 //routs untuk category
 Route::get('categories', [CategoryController::class, 'data_category']);
 //login
-Route::get('/login', [LoginController::class, 'login']);
+Route::get('/login', [RegisterController::class, 'login']);
 //register
-Route::get('/register', [LoginController::class, 'register']);
+Route::get('/register', [RegisterController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'data_register']);
 
 
 
