@@ -20,7 +20,8 @@
 </div>
 @if($models -> count())
 <div class="card mb-3" style="width:90%; margin-left:5%;">
-  <img src="https://picsum.photos/1300/500?{{$models[0]->category->nama}}" class="card-img-top" alt="{{$models[0]->category->nama}}">
+  <!-- <img src="https://picsum.photos/1300/500?{{$models[0]->category->nama}}"class="card-img-top" alt="{{$models[0]->category->nama}}"> -->
+  <img src="foto-berita/{{$models[0]->img}}.jpg" alt="">
   <div class="card-body">
     <h3 class="card-title">{{$models[0]->title}}</h3>
     <p>By . <a href="/blog?author={{$models[0]->author->username}}">{{$models[0]->author->name}}</a>
@@ -43,7 +44,8 @@
         <div class="position-absolute" id="category">
           {{$data->category->nama}}
         </div>
-        <img src="https://picsum.photos/500/300?{{$data->category->nama}}" class="card-img-top" alt="{{$data->category->nama}}">
+        <!-- <img src="https://picsum.photos/500/300?{{$data->category->nama}}" class="card-img-top" alt="{{$data->category->nama}}"> -->
+        <img src="foto-berita/{{$data->img}}.jpg" alt="">
         <div class="card-body">
           <h5 class="card-title">{{$data->title}}</h5>
           <small class="text-muted">

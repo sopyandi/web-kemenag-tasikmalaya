@@ -138,6 +138,6 @@ class DatabaseSeeder extends Seeder
             'nama' => 'Personal',
             'slug' => 'personal'
         ]);
-        Post::factory(50)->create();
+        Post::factory(5)->create();
     }
 }

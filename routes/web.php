@@ -28,9 +28,11 @@ Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
 //routs untuk category
 Route::get('categories', [CategoryController::class, 'data_category']);
 //login
-Route::get('/login', [RegisterController::class, 'login'])->middleware('guest');
+Route::get('/login', [RegisterController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [RegisterController::class, 'data_login']);
-Route::get('/dashboard', [DashboardController::class, 'dashboard']);
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
+//logout
+Route::post('/logout', [RegisterController::class, 'logout'])->middleware('auth');
 //register
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'data_register']);

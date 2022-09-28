@@ -25,9 +25,34 @@
                     <a class="nav-link disabled">Disabled</a>
                     </li> -->
               </ul>
-              <ul class="navbar-nav ms-auto">
+              <ul class="navbar-nav ms-auto active">
+                  @auth
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Selamat Datang {{ auth()->user()->name}}
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">
+                                  <i class="bi bi-menu-button-fill"></i> Dashboard</a></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li>
+                              <form action="/logout" method="post">
+                                  @csrf
+                                  <button type="submit" class="dropdown-item">
+                                      <i class="bi bi-box-arrow-left"></i>Logout
+                                  </button>
+                              </form>
+
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
                   <li class="nav-item">
+                      @else
                       <a href="/login" class="nav-link {{($title === 'Login') ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                      @endauth
                   </li>
               </ul>
           </div>
