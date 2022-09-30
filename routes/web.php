@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,13 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(
 //logout
 Route::post('/logout', [RegisterController::class, 'logout'])->middleware('auth');
 //register
-Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'data_register']);
+Route::get('/register', [RegisterController::class, 'register']);
 
-
+Route::get('/dashboard',function(){
+    return view('/dashboard/dashboard');
+})->middleware('auth');
+Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 
 
 

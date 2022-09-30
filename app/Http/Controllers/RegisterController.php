@@ -32,7 +32,7 @@ class RegisterController extends Controller
         //    $datalogin['password'] = bcrypt($datalogin['password']);
         if (Auth::attempt($datalogin)) {
             $data->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
         }
         return back()->with('filedlogin', 'Maap Anda Gagal Login Mungkin Ada Kesalahan Dalam Pengetikan Atau Anda Belum Terdaftar!!');
     }
@@ -46,7 +46,7 @@ class RegisterController extends Controller
 
         $logout->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 
 
