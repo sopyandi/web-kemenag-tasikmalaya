@@ -28,7 +28,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        //
+       return view('/dashboard/post/create');
     }
 
     /**
@@ -50,7 +50,9 @@ class DashboardPostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('/dashboard/post/show',[
+        'models' => $post
+        ]);
     }
 
     /**
@@ -85,5 +87,8 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+    public function checkSlug(Request $request){
+        
     }
 }

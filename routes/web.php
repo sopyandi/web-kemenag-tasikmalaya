@@ -43,6 +43,7 @@ Route::get('/dashboard',function(){
 })->middleware('auth');
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 
+//route untuk tulis
 
 
 // routs untuk view categories

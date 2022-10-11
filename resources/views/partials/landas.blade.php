@@ -6,8 +6,3 @@
        </div>
       </div>
     </div>
-  <style>
-    body{
-      background-color:#198754;;
-    }
-  </style>

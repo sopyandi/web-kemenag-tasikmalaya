@@ -45,32 +45,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-<table>
-  <tr>
-    <td>
-    <img src="foto-berita/h.usep.png" class="carousel" style="margin-top:-15%;margin-left:5%;" alt="">
-    </td>
-    <td>
-      <div class="text">
-      <h2 color="white">Sambutan Kapala Kantor Kementerian Agama </h2><br>
-      <h5>
-        <small><p class="fst-italic">
-        Mari Kita Tetap Ber Takwa Kepada Tuhan Yang Maha Esa <br>
-        Karena Itu Adalah Suatu Bentuk Wujud Dari Mengamalkan Pancasila <br>
-        _______ <br></p></small>
-        Drs. H Usep Saefudin Mukhtar M.Pd
-      </h5><br>
-      </div>
-    </td>
-  </tr>
-</table>
-<style>
-  .text{
-    margin-left:5%;
-    color:white;
-    font-family:sans-serif;
-  }
-</style>
+
      <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
