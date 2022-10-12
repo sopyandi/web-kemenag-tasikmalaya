@@ -4,6 +4,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SlugController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
@@ -43,7 +44,8 @@ Route::get('/dashboard',function(){
 })->middleware('auth');
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 
-//route untuk tulis
+//route untuk tulis otomats slug
+Route::get('/bangsat',[SlugController::class, 'checkSlug'])->middleware('auth');
 
 
 // routs untuk view categories

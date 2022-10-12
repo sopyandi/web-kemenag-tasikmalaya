@@ -7,28 +7,26 @@
     <form method="post" action="/dashboard/post">
         @csrf
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="title" class="form-label">title</label>
+        <input type="text" class="form-control" id="title"  name="title">
     </div>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">slug</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="slug" class="form-label">slug</label>
+        <input type="text" class="form-control" id="slug"  name="slug">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+<a href="/bangsat">xccsds</a>
 
 <script>
     //untuk membuat slug otomatis dengan javascript
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
 
-    title.addEventListener('change',functon (){
-     fetch('/dashboard/post/checkSlug')
+    title.addEventListener('change',function (){
+     fetch('/bangsat?title=' + title.value)
      .then(response => response.json())
      .then(data => slug.value = data.slug)
     });

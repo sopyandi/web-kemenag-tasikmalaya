@@ -1,5 +1,5 @@
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success ">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
       <div class="container">
           <img src="img/ii.png" class="navbar-brand " alt="" style="width:5%;">
           <a class="navbar-brand" href="/">KEMENAG</a>
