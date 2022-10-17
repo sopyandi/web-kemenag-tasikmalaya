@@ -6,29 +6,45 @@
 <div class="col-lg-8">
     <form method="post" action="/dashboard/post">
         @csrf
-    <div class="mb-3">
-        <label for="title" class="form-label">title</label>
-        <input type="text" class="form-control" id="title"  name="title">
-    </div>
-    <div class="mb-3">
-        <label for="slug" class="form-label">slug</label>
-        <input type="text" class="form-control" id="slug"  name="slug">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mb-3">
+                <label for="title" class="form-label">Judul</label>
+                <input type="text" class="form-control" id="title"  name="title">
+            </div>
+            <div class="mb-3">
+                <label for="slug" class="form-label">Slug</label>
+                <input type="text" class="form-control" id="slug"  name="slug" disable readonly>
+            </div>
+            <div class="mb-3">
+                <label for="slug" class="form-label">Category</label>
+                <select name="category" class="form-select" aria-label="Default select example">
+                @foreach($models as $data)
+                <option value="{{ $data->id }}" selected>{{$data->nama}}</option>
+                @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">Deskripsi</label>
+                <input id="body" type="hidden" name="body">
+                <trix-editor input="body"></trix-editor>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
-<a href="/bangsat">xccsds</a>
-
-<script>
+<script>    
     //untuk membuat slug otomatis dengan javascript
     const title = document.querySelector('#title');
     const slug = document.querySelector('#slug');
 
     title.addEventListener('change',function (){
-     fetch('/bangsat?title=' + title.value)
+     fetch('/slugable?title=' + title.value)
      .then(response => response.json())
      .then(data => slug.value = data.slug)
     });
+
+    document.addEventListener('trix-file-accept', function(e){
+        e.preventDefault();
+    });
+
 </script>
 @endsection

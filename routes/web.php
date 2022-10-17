@@ -45,7 +45,7 @@ Route::get('/dashboard',function(){
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 
 //route untuk tulis otomats slug
-Route::get('/bangsat',[SlugController::class, 'checkSlug'])->middleware('auth');
+Route::get('/slugable',[SlugController::class, 'slugable'])->middleware('auth');
 
 
 // routs untuk view categories

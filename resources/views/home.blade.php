@@ -4,6 +4,3 @@
     @include('partials/crausel')
     <!-- tutup slide -->
 @endsection
-@section('landas')
-@include('partials/landas')
-@endsection

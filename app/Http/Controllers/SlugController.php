@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 class SlugController extends Controller
 {
-    public function checkSlug(Request $request)
+    public function slugable(Request $request)
     {
      $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
      return response()->json(['slug'=>$slug]);
