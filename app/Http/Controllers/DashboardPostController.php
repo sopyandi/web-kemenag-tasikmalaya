@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 
 class DashboardPostController extends Controller
 {
@@ -42,7 +44,18 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        // return $request;
+        $validasi = $request->validate([
+        'title'=>'required|max:225',
+        'slug'=>'required|unique:Posts',
+        'category_id'=>'required',
+        'body'=>'required'
+        ]);
+        $validasi['user_id']= auth()->user()->id;
+        $validasi['exerp']= Str::limit(strip_tags($request->body),200);
+
+        Post::create($validasi);
+
     }
 
     /**
