@@ -32,7 +32,7 @@
                           Selamat Datang {{ auth()->user()->name}}
                       </a>
                       <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">
+                          <li><a class="dropdown-item" href="/dashboard">
                                   <i class="bi bi-menu-button-fill"></i> Dashboard</a></li>
                           <li>
                               <hr class="dropdown-divider">

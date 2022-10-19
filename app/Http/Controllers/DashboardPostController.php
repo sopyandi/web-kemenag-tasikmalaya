@@ -53,9 +53,13 @@ class DashboardPostController extends Controller
         ]);
         $validasi['user_id']= auth()->user()->id;
         $validasi['exerp']= Str::limit(strip_tags($request->body),200);
-
+        $validasi['img']=1;
         Post::create($validasi);
-
+        $username = auth()->user()->name;
+        $judul = $request->title;
+        $request->session()->flash('success', $username);
+        $request->session()->flash('judul', $judul);
+        return redirect('/dashboard/post');
     }
 
     /**
