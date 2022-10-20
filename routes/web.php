@@ -38,10 +38,6 @@ Route::post('/logout', [RegisterController::class, 'logout'])->middleware('auth'
 //register
 Route::post('/register', [RegisterController::class, 'data_register']);
 Route::get('/register', [RegisterController::class, 'register']);
-
-Route::get('/dashboard',function(){
-    return view('/dashboard/dashboard');
-})->middleware('auth');
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 
 //route untuk tulis otomats slug

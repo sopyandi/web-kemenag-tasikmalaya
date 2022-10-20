@@ -5,7 +5,19 @@
       </div>
       @if(session()->has('success'))
       <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left:-2.5%;">
-        <strong>{{session('success')}} Telah Menambah Data Baru Berjudul "{{session('judul')}}"!!</strong> Your Acount Is Ready For Login .
+        Berita Berjudul <strong class="">{{session('judul')}}</strong> Telah Di Tambahkan ...
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+      @if(session()->has('delete'))
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-left:-2.5%;">
+        Berita Berjudul <strong>{{session('delete')}}</strong> Di Hapus ...
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+      @if(session()->has('edit'))
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-left:-2.5%;">
+        Berita Berjudul <strong>{{session('edit')}}</strong> Berhasil Di Edit ...
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       @endif
@@ -31,12 +43,16 @@
                 <a href="/dashboard/post/{{$data->slug}}" class="badge bg-info">
                   <span data-feather="eye"></span>
                 </a>
-                <a href="" class="badge bg-warning">
+                <a href="/dashboard/post/{{$data->slug}}/edit" class="badge bg-warning">
                   <span data-feather="edit"></span>
                 </a>
-                <a href="" class="badge bg-danger">
+                <form action="/dashboard/post/{{$data->slug}}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Yakin Menghapus ?')">
                   <span data-feather="x-circle"></span>
-                </a>
+                  </button>
+                </form>
               </td>
             </tr>
             @endforeach

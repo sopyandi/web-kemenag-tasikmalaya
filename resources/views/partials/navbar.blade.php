@@ -15,10 +15,10 @@
                       <a class="nav-link {{($title === 'About') ? 'active' : ''}}" href="/about">About</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}{{($title === 'rian') ? 'active' : ''}}" href="/categories">Category</a>
+                      <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}{{($title === 'rian') ? 'active' : ''}}" href="/categories">Sajian Berita</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}} {{($title === 'Short By Username') ? 'active' : ''}}" href="/blog">Blog</a>
+                      <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}} {{($title === 'Short By Username') ? 'active' : ''}}" href="/blog">Berita</a>
                   </li>
 
                   <!-- <li class="nav-item">

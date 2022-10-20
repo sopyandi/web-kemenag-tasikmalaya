@@ -17,9 +17,8 @@ class DashboardPostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {  
        return view('/dashboard/post/post',[
-        'no'=>1,
         'models'=>Post::where('user_id', auth()->user()->id)->get()
        ]);
     }
@@ -83,7 +82,10 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('/dashboard/post/edit',[
+            'berita' =>$post,
+            'models' =>Category::all()
+           ]);
     }
 
     /**
@@ -95,7 +97,25 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $ruls = [
+            'title'=>'required|max:225',
+            'category_id'=>'required',
+            'body'=>'required'
+            ];
+
+        if($request->slug != $post->slug){
+            $ruls['slug'] = 'required|unique:Posts';
+        }
+
+        $edit = $request->validate($ruls);
+
+        $edit['user_id']= auth()->user()->id;
+        $edit['exerp']= Str::limit(strip_tags($request->body),200);
+        $edit['img']=1;
+        
+        Post::where('id',$post->id)->update($edit);
+        $judul = $request->title;
+        return redirect('/dashboard/post')->with('edit', $judul);
     }
 
     /**
@@ -106,6 +126,11 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+    // $rian = auth()->user()->name;
+    // return $post;
+    $judul = $post->title;
+    Post::destroy($post->id);
+    return redirect('/dashboard/post')->with('delete',$judul);
+
     }
 }
