@@ -17,10 +17,7 @@ class PostController extends Controller
     public function about()
     {
         return view('about', [
-            "title" => "About",
-            "name" => "Rian Sopyandi",
-            "gmail" => "sopyandirian12@gmail.com",
-            "img" => "anwar.jpg"
+            "title" => "About"
 
         ]);
     }

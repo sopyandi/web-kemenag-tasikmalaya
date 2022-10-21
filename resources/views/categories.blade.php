@@ -8,7 +8,7 @@
         <div class="col-md-4 mb-4">
             <a href="/blog?category={{$data->slug}}">
                 <div class="card text-bg-white">
-                    <img src="https://picsum.photos/500/300?{{$data->nama}}" class="card-img" alt="...">
+                    <img src="agama/{{$data->img}}" class="card-img" alt="...">
                     <!-- <img src="img/anwar.JPG" class="card-img" alt="..."> -->
                     <div class="card-img-overlay" id="category">
                         <h3 class="card-title text-white" style="margin-top:40%;">{{$data->nama}}</h3>

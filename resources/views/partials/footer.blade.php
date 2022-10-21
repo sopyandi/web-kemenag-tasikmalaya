@@ -11,27 +11,24 @@
     </div>
   </div> --}}
 
-  <footer style="background-color:#2D2D26;">
+  <footer style="background-color:#2D2D26; width:100%;">
     <div class="row">
         <div class="col mx-5 mt-3">
-            <img src="img/logo2.png" alt="">
+            <img src="img/logo2.png" alt="" style="width:60%;">
         </div>
         <div class="col mx-5 mt-3 text-white">
-            <h3>ALAMAT</h3><br>
+            <h5>ALAMAT</h5><br>
             Jalan Raya Pemda No. 44 Singasari
-            Kecamatan Singaparna Tasikmalaya - Jawa Barat - Indonesia
             (0265) 543622
         </div>
         <div class="col mx-5 mt-3 text-white">
-            <h4>KONTAK NFO</h4><br>           
+            <h5>KONTAK INFO</h5><br>           
             Jalan Raya Pemda No. 44 Singasari
-            Kecamatan Singaparna Tasikmalaya - Jawa Barat - Indonesia
             (0265) 543622
         </div>
         <div class="col mx-5 mt-3 text-white">
-            <h4>KELUHAN</h4><br>           
+            <h5>Donasi</h5><br>           
             Jalan Raya Pemda No. 44 Singasari
-            Kecamatan Singaparna Tasikmalaya - Jawa Barat - Indonesia
             (0265) 543622
         </div>
     </div>

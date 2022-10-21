@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengajuanController;
 use App\Http\Controllers\DashboardPostController;
 
 /*
@@ -23,7 +24,7 @@ use App\Http\Controllers\DashboardPostController;
 */
 
 Route::get('/', [PostController::class, 'home']);
-Route::get('/about', [PostController::class, 'about']);
+Route::get('/abouts', [PostController::class, 'about']);
 Route::get('/blog', [PostController::class, 'blog']);
 //routs untuk single blog di halaman blog
 Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
@@ -39,11 +40,11 @@ Route::post('/logout', [RegisterController::class, 'logout'])->middleware('auth'
 Route::post('/register', [RegisterController::class, 'data_register']);
 Route::get('/register', [RegisterController::class, 'register']);
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
-
 //route untuk tulis otomats slug
 Route::get('/slugable',[SlugController::class, 'slugable'])->middleware('auth');
-
-
+Route::get('/pengajuans',[PengajuanController::class,'pengajuan']);
+Route::get('/pengajuan/pengaduan',[PengajuanController::class,'pengaduan']);
+Route::post('/pengajuan/pengaduan',[PengajuanController::class,'input_pengaduan']);
 // routs untuk view categories
 // Route::get('/categories/{category:slug}', [CategoryController::class, 'categori']);
 //Short By Blog From Publisher (username/nama)

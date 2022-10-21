@@ -12,10 +12,10 @@
                       <a class="nav-link {{($title === 'Home') ? 'active' : ''}}" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link {{($title === 'About') ? 'active' : ''}}" href="/about">About</a>
+                      {{-- <a class="nav-link {{($title === 'About') ? 'active' : ''}}" href="/abouts">About</a> --}}
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}{{($title === 'rian') ? 'active' : ''}}" href="/categories">Sajian Berita</a>
+                      <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}{{($title === 'rian') ? 'active' : ''}}" href="/categories">Agama</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}} {{($title === 'Short By Username') ? 'active' : ''}}" href="/blog">Berita</a>
@@ -51,6 +51,7 @@
                   </li>
                   <li class="nav-item">
                       @else
+                      <a href="/pengajuans"><button type="button" class="btn btn-warning {{($title === 'Pengajuan') ? 'd-none' : ''}}" >Pengajuan</button></a>
                       <a href="/login" class="nav-link {{($title === 'Login') ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                       @endauth
                   </li>

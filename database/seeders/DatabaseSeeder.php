@@ -127,17 +127,30 @@ class DatabaseSeeder extends Seeder
 
 
         Category::create([
-            'nama' => 'Web Programming',
-            'slug' => 'web-programming'
+            'img' => 'islam.jpg',
+            'nama' => 'Agama Islam',
+            'slug' => 'agama-islam'
         ]);
         Category::create([
-            'nama' => 'Web Disign',
-            'slug' => 'web-disign'
+            'img' => 'kristen.jpg',
+            'nama' => 'Agama Kristen',
+            'slug' => 'agama-kristen'
         ]);
         Category::create([
-            'nama' => 'Personal',
-            'slug' => 'personal'
+            'img' => 'hindu.jpg',
+            'nama' => 'Agama Hindu',
+            'slug' => 'agama-hindu'
         ]);
-        Post::factory(5)->create();
+        Category::create([
+            'img' => 'konghucu.jpg',
+            'nama' => 'Agama Kongucu',
+            'slug' => 'agama-kongucu'
+        ]);
+        Category::create([
+            'img' => 'katolik.jpg',
+            'nama' => 'Agama Katholik',
+            'slug' => 'agama-katolik'
+        ]);
+        Post::factory(10)->create();
     }
 }
