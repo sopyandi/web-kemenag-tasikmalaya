@@ -30,9 +30,10 @@ class DatabaseSeeder extends Seeder
         //     'password'=>bcrypt('12345')
         // ]);
         // User::create([
-        //     'name'=>'Fitria',
-        //     'email'=>'fitria12@gmail.com',
-        //     'password'=>bcrypt('54321')
+        //     'name'=>'Fitria fitria',
+        //     'username'=>'anisa',
+        //     'email'=>'anisa@gmail.com',
+        //     'password'=>'anisa123'
         // ]);
 
         // Post::create([

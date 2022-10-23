@@ -51,8 +51,8 @@
                   </li>
                   <li class="nav-item">
                       @else
-                      <a href="/pengajuans"><button type="button" class="btn btn-warning {{($title === 'Pengajuan') ? 'd-none' : ''}}" >Pengajuan</button></a>
                       <a href="/login" class="nav-link {{($title === 'Login') ? 'active' : ''}}"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                      <a href="/pengajuans"><button type="button" class="btn btn-warning {{($title === 'Pengajuan') ? 'd-none' : ''}}" >Pengajuan</button></a>
                       @endauth
                   </li>
               </ul>

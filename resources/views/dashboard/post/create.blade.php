@@ -4,7 +4,7 @@
         <h1 class="h2">Create Post</h1>
       </div>
 <div class="col-lg-8">
-<form method="post" action="/dashboard/post">
+<form method="post" action="/dashboard/post" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="title" class="form-label">Judul</label>
@@ -36,6 +36,15 @@
         @endforeach
         </select>
     </div>
+    <div class="mb-3">
+        <label for="img" class="form-label @error('img') is-invalid @enderror">Tambahkan Gambar</label>
+        <input class="form-control" type="file" id="img"  name="img">
+        @error('img')
+        <div  class="invalid-feedback">
+        {{$message}}
+        </div>  
+        @enderror
+      </div>
     <div class="mb-3">
         <label for="body" class="form-label" required>Deskripsi</label>
         <input id="body" type="hidden" name="body" value="{{old('body')}}">

@@ -23,7 +23,7 @@
             <center>
                 <img class="mb-4" src="img/logo.png" alt="" width="250" height="110">
                 </center>
-            <h1 class="h3 mb-3 fw-normal">Silahkan Login</h1>
+            <h1 class="h3 mb-1 fw-normal">Halaman Login Hanaya Untuk Pegawai Kantor Saja</h1>
             <form action="/login" method="post">
                 @csrf
                 <div class="form-floating">

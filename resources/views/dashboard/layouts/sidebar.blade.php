@@ -14,6 +14,17 @@
               My Post
             </a>
           </li>
+          @auth
+          @if(auth()->user()->status === 'admin')
+          <li class="nav-item">
+            <a class="nav-link {{Request::is('register') ? 'active' : ''}}" href="/register">
+              <span data-feather="file" class="align-text-bottom"></span>
+              Create Oficer
+            </a>
+          </li>
+          @endif
+          @else
+          @endauth
         </ul>
       </div>
     </nav>

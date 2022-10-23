@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -17,8 +19,9 @@ class RegisterController extends Controller
     }
     public function register()
     {
-        return view('register/register', [
-            'title' => 'Login'
+        return view('/dashboard/post/register', [
+            'title' => 'Login',
+            'models'=>Category::all()
         ]);
     }
     ///method login
@@ -55,6 +58,7 @@ class RegisterController extends Controller
     {
         //filterasi data untuk register
         // return $data->all();
+        // return $data;    
         $datavalidasi = $data->validate([
             'name' => 'required|min:10|max:225',
             'username' => 'required|min:3|max:225|unique:users',
@@ -62,6 +66,8 @@ class RegisterController extends Controller
             'password' => 'required|min:5|max:225'
         ]);
         $datavalidasi['password'] = bcrypt($datavalidasi['password']);
+        $datavalidasi['category_id'] = $data->agama;
+        $datavalidasi['status'] = $data->status;
         // $datavalidasi['password'] = Hash::make($datavalidasi['password'])
         //masukan data ke databases
         User::create($datavalidasi);

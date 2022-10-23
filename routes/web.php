@@ -45,6 +45,7 @@ Route::get('/slugable',[SlugController::class, 'slugable'])->middleware('auth');
 Route::get('/pengajuans',[PengajuanController::class,'pengajuan']);
 Route::get('/pengajuan/pengaduan',[PengajuanController::class,'pengaduan']);
 Route::post('/pengajuan/pengaduan',[PengajuanController::class,'input_pengaduan']);
+// Route::get('/berhasil',[PengajuanController::class, 'berhasil']);
 // routs untuk view categories
 // Route::get('/categories/{category:slug}', [CategoryController::class, 'categori']);
 //Short By Blog From Publisher (username/nama)

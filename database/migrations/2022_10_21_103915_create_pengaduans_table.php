@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->text('alamat');
+            $table->foreignId('category_id');
             $table->string('nomor');
             $table->string('pengaduan');
             $table->timestamps();

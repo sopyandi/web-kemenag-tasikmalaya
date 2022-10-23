@@ -43,16 +43,20 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
+        // return $request->file('img')->store('post-images');
+        // ddd($request);
         $validasi = $request->validate([
         'title'=>'required|max:225',
         'slug'=>'required|unique:Posts',
         'category_id'=>'required',
+        'img'=>'image|file|max:1024',
         'body'=>'required'
         ]);
+        if($request->file('img')){
+        $validasi['img'] = $request->file('img')->store('post-images');
+        }
         $validasi['user_id']= auth()->user()->id;
         $validasi['exerp']= Str::limit(strip_tags($request->body),200);
-        $validasi['img']=1;
         Post::create($validasi);
         $username = auth()->user()->name;
         $judul = $request->title;

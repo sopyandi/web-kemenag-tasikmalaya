@@ -18,23 +18,28 @@
     </form>
   </div>
 </div>
-@if($models -> count())
-<div class="card mb-3" style="width:90%; margin-left:5%;">
-  <!-- <img src="https://picsum.photos/1300/500?{{$models[0]->category->nama}}"class="card-img-top" alt="{{$models[0]->category->nama}}"> -->
-  <img src="foto-berita/{{$models[0]->img}}.jpg" alt="">
-  <div class="card-body">
-    <h3 class="card-title">{{$models[0]->title}}</h3>
-    <p>By . <a href="/blog?author={{$models[0]->author->username}}">{{$models[0]->author->name}}</a>
-      Thiss <a href="/blog?category={{$models[0]->category->slug}}"> {{$models[0]->category->nama}}</a>
-      <small class="text-muted">
-        {{$models[0]->created_at->diffForHumans()}}
-    </p>
-    </small>
-    <p>{{$models[0]->exerp}}</p>
-    <a href="/blog/{{$models[0]->slug}}" class="btn btn-primary">Read More...</a>
-  </div>
-</div>
-<br>
+      @if($models -> count())
+      <div class="card mb-3" style="width:90%; margin-left:5%;">
+        @if($models[0]->img)
+        <div style="max-height:400px; overflow:hidden;">
+            <img src="{{ asset('storage/'. $models[0]->img) }}" alt="" style="width:100%;">
+        </div>
+        @else
+        <img src="https://picsum.photos/1300/500?{{$models->category->nama}}" alt="" class="img-fluid my-4 ">
+        @endif
+        <div class="card-body">
+          <h3 class="card-title">{{$models[0]->title}}</h3>
+          <p>Publiser <a href="/blog?author={{$models[0]->author->username}}">{{$models[0]->author->name}}</a>
+            Category <a href="/blog?category={{$models[0]->category->slug}}"> {{$models[0]->category->nama}}</a>
+            <small class="text-muted">
+              {{$models[0]->created_at->diffForHumans()}}
+          </p>
+          </small>
+          <p>{{$models[0]->exerp}}</p>
+          <a href="/blog/{{$models[0]->slug}}" class="btn btn-primary">Read More...</a>
+        </div>
+      </div>
+      <br>
 
 <div class="container">
   <div class="row">
@@ -44,13 +49,20 @@
         <div class="position-absolute" id="category">
           {{$data->category->nama}}
         </div>
-        <!-- <img src="https://picsum.photos/500/300?{{$data->category->nama}}" class="card-img-top" alt="{{$data->category->nama}}"> -->
-        <img src="foto-berita/{{$data->img}}.jpg" alt="">
+        {{-- foto --}}
+        @if($data->img)
+          <div style="max-height:350px; overflow:hidden;">
+              <img src="{{ asset('storage/'. $data->img) }}" alt="">
+          </div>
+        @else
+        <img src="https://picsum.photos/1300/500?{{$data->category->nama}}" alt="" class="img-fluid my-4 ">
+        @endif
+        {{-- '''''''''' --}}
         <div class="card-body">
           <h5 class="card-title">{{$data->title}}</h5>
           <small class="text-muted">
-            <p> By <a href="/blog?author={{$data->author->username}}">{{$data->author->name}}</a> <br>
-              In category <a href="/blog?category={{$data->category->slug}}">{{$data->category->nama}}</a></p>
+            <p>Publiser <a href="/blog?author={{$data->author->username}}">{{$data->author->name}}</a> <br>
+              Category <a href="/blog?category={{$data->category->slug}}">{{$data->category->nama}}</a></p>
             <p class="card-text">{{$data->exerp}}</p>
           </small>
           <a href="/blog/{{$data->slug}}" class="btn btn-primary" style="float:-right;">Read More..</a>

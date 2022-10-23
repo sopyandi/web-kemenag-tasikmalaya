@@ -3,8 +3,24 @@
 <center>
     {{-- <img src="pengajuan/yatim1.jpg" alt="" style="width:100%; height:500px;"> --}}
 <div class="container">
-    </div>
-    <div class="row row-cols-3 mt-5 mb-5">
+     @if(session()->has('success'))
+    <div class="alert alert-light alert-dismissible fade show " role="alert" style="margin-left:-2.5%;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="/pengajuan/berhasil.gif" alt="" style="width:40%;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+               Yth. <strong>{{session('success')}}!!</strong> Kami Akan Menanggapi Pengaduan Anda Dalam 1x24 jam .
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+      </div>
+      @endif 
+    <div class="row row-cols-3 mt-5 mb-5 d-inline-flex">
         <div class="col">
             <a href="/pengajuan/pengaduan">
             <img src="pengajuan/pengajuan.png" alt="" >
@@ -31,7 +47,7 @@
         </div>
     </div>
     </div>
-</div>
+</div> 
 </center>
 <br><br><br><br><br>
 <div class="container">
